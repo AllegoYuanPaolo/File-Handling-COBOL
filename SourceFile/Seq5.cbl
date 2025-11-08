@@ -1,3 +1,5 @@
+$set sourceformat"free"
+
        IDENTIFICATION DIVISION.
        PROGRAM-ID. Seq5.
 
@@ -89,6 +91,9 @@
                    write bufferLine from "------------------"
 
                close outputFile
+                 display "Prelims: " function trim(formatPrelim) " | Midterms: " function trim(formatMidterm) " | Finals: " function trim(formatFinals) " |" 
+        display "_______________".
+        display "Average grade: " function trim(dispAve)    
 
 
        exit program.

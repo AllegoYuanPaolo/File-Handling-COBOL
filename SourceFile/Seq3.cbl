@@ -62,6 +62,9 @@
                   
 
            close outputFile
+
+           display "___________________"
+            display "Fahrenheit: " function trim(DisplayFahr)
            
   
        exit program.

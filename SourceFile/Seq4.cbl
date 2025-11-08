@@ -1,3 +1,4 @@
+$set sourceformat"free"
        IDENTIFICATION DIVISION.
        PROGRAM-ID. Seq4.
 
@@ -83,12 +84,10 @@
                    end-if
                   
        
-       move function concatenate("Num1: ", function trim(formatNum1))   -
-        to bufferLine
+       move function concatenate("Num1: ", function trim(formatNum1)) to bufferLine
                    write bufferLine
        
-       move function concatenate("Num2: ", function trim(formatNum2))   -
-       to bufferLine
+       move function concatenate("Num2: ", function trim(formatNum2)) to bufferLine
                    write bufferLine
                 
                 move spaces to bufferLine
@@ -117,5 +116,7 @@
                        write bufferLine from "----------"
                    
                    close outputFile
+        Display "Sum: " function  trim(sumDisp) " | Diff: " function trim(alpdiff)
+        Display "Prod: " function trim(prodDisp) " | Quo: " function trim(quodisp)
            
        exit program.
