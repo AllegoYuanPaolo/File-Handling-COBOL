@@ -6,6 +6,11 @@
        DATA DIVISION.
            local-STORAGE SECTION.
            01 num PIC 9(3).
+           01 ZNum pic zz9.
+
+           01 result pic x(32).
+
+           01 OFStat pic xx.
        PROCEDURE DIVISION. 
            DISPLAY "Enter number: "
            ACCEPT num
