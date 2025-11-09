@@ -1,1 +1,3 @@
 # Ignore build and OS files
+__pycache__/
+*.pyc
