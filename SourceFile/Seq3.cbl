@@ -57,8 +57,9 @@
                       into buffer
                       with pointer ptr
                 end-string 
-
-                   write buffer
+               
+  
+                 write buffer
                   
 
            close outputFile

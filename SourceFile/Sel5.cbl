@@ -19,10 +19,16 @@
            01 num2 PIC s9(3).
            01 num3 PIC s9(3).
 
-           01 ZNum1 pic zzz.
-           
-           01 disp PIC ZZZ.
+           01 disp PIC +ZZ9.
            01 alpDisp pic x(4).
+
+
+           01 ZNum1 pic +zz9.
+           01 ZNum2 pic +zz9.
+           01 ZNum3 pic +zz9.
+           01 alpNum1 pic x(4).
+           01 alpNum2 pic x(4).
+           01 alpNum3 pic x(4).
 
            01 frmt.
                02 FSym pic x.
@@ -55,17 +61,66 @@
               else 
                    move num3 to disp
               end-if.
-               display "DEBUG| disp: " disp
-
+         
+           
+           move num1 to ZNum1
+           move num2 to ZNum2
+           move num3 to ZNum3
+               
+           
                            
                  unstring disp delimited by all spaces
                        into FSym FNum
                end-unstring
 
+               
+
                string FSym delimited by space
                       FNum delimited by space
                       into alpDisp
                end-string
+
+                   move spaces to FSym
+                   move space to FNum
+
+                   unstring ZNum1 delimited by all spaces
+                           into FSym FNUm
+                   end-unstring
+
+                   
+
+                   string FSym delimited by space
+                          FNum delimited by space
+                          into alpNum1
+                   end-string
+                   
+                   move spaces to FSym
+                   move space to FNum
+
+                   unstring ZNum2 delimited by all spaces
+                            into FSym FNum
+                   end-unstring
+
+          
+
+                   string FSym delimited by space
+                          FNum delimited by space
+                          into alpNum2
+                   end-string
+                   
+                 move spaces to FSym
+                   move space to FNum
+
+                   unstring ZNum1 delimited by all spaces
+                            into FSym FNum
+                   end-unstring
+                       
+                 
+                   string FSym delimited by space
+                          FNum delimited by space
+                          into alpNum3
+                   end-string
+
 
                string "The smallest number is: " delimited by size
                        function trim(alpDisp) delimited by space
@@ -74,6 +129,10 @@
 
               display result
 
+
+               display spaces
+             
+               
                open input outputFile
                    if OFStat = "00"
                        close outputFile
@@ -82,11 +141,26 @@
                        open output outputFile
                     end-if
                    
+                   move space to bufferLine
                    string "Num 1: " delimited by size
-                           function trim()
+                           function trim(alpNum1) delimited by space
+                           " | Num 2: " delimited by size
+                           function trim(alpNum2) delimited by space
+                           " | Num 3: " delimited by size
+                           function trim(alpNum3) delimited by space
+                           into bufferLine
+                   end-string
+                           write bufferLine
+
+                           write bufferLine from "------------------"
+
+                           write bufferLine from result
+                           write bufferLine from "------------------"
+                           write bufferLine from space
 
                     close outputFile
                    
 
            goback. 
                
+     

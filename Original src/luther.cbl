@@ -1,0 +1,99 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. SEQ4.
+
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+           SELECT OPTIONAL SEQ4-FILE
+           ASSIGN TO "SEQ4FILE.DAT"
+           ORGANIZATION IS LINE SEQUENTIAL.
+
+       DATA DIVISION.
+           FILE SECTION.
+           
+           FD SEQ4-FILE.
+        
+           01 SUMMFILE             PIC ZZZ9 .
+           01 DIFFFILE             PIC +ZZZ9 .
+           01 PRODFILE             PIC ZZZ9 .
+           01 QUOFILE              PIC ZZZZ.Zz .
+
+           WORKING-STORAGE SECTION.
+           
+           01 NUM1 PIC 9(2).
+           01 NUM2 PIC 9(2).
+
+           01 ANSWERS.
+
+               02 SUMMATIONANS    PIC 9(4).
+               02 DIFFERENCEANS   PIC S9(4).
+               02 PRODUCTANS      PIC 9(4).
+               02 QUOTIENTANS     PIC 9(4)V99 COMP-3.
+
+           01 DISPLAYANSWERS.
+               
+               02 SUMMATIONDISPLAY   PIC ZZZ9 .
+               02 DIFFERENCEDISPLAY  PIC +ZZZ9 .
+               02 PRODUCTDISPLAY     PIC ZZZ9 .
+               02 QUOTIENTDISPLAY    PIC ZZZZ.Zz .
+
+       PROCEDURE DIVISION.
+
+           DISPLAY "ENTER NUMBER 1: " WITH NO ADVANCING.
+           ACCEPT NUM1.
+
+           DISPLAY "ENTER NUMBER 2: " WITH NO ADVANCING.
+           ACCEPT NUM2.
+
+
+           COMPUTE SUMMATIONANS OF ANSWERS = NUM1 + NUM2.
+           COMPUTE DIFFERENCEANS OF ANSWERS = NUM1 - NUM2.
+           COMPUTE PRODUCTANS OF ANSWERS = NUM1 * NUM2.
+           COMPUTE QUOTIENTANS OF ANSWERS = NUM1 / NUM2.
+
+           MOVE SUMMATIONANS TO SUMMATIONDISPLAY.
+           MOVE DIFFERENCEANS TO DIFFERENCEDISPLAY.
+           MOVE PRODUCTANS TO PRODUCTDISPLAY.
+           MOVE QUOTIENTANS TO QUOTIENTDISPLAY.
+
+       DISPLAY "SUMMATION: " SUMMATIONDISPLAY.
+       DISPLAY "DIFFERENCE: " DIFFERENCEDISPLAY.
+       DISPLAY "PRODUCT: " PRODUCTDISPLAY.
+       DISPLAY "QUOTIENT: " QUOTIENTDISPLAY.
+
+       
+       OPEN OUTPUT SEQ4-FILE
+       
+       MOVE SUMMATIONANS TO SUMMFILE
+       MOVE DIFFERENCEANS TO DIFFFILE
+       MOVE PRODUCTANS TO PRODFILE
+       MOVE QUOTIENTANS TO QUOFILE
+
+       display spaces
+       
+       display "sumfile: " SUMMFILE
+       display "difffile: " DIFFFILE
+       display "prodfile: " PRODFILE
+       display "quofile: " QUOFILE
+
+       display spaces       
+
+       DISPLAY "PRINTING FOR TEXT FILE..."
+       DISPLAY "SUMMATION: " SUMMATIONANS
+       DISPLAY "DIFFERENCE: " DIFFERENCEANS
+       DISPLAY "PRODUCT: " PRODUCTANS
+       DISPLAY "QUOTIENT: " QUOTIENTANS
+
+       WRITE SUMMFILE
+       WRITE DIFFFILE
+       WRITE PRODFILE
+       WRITE QUOFILE
+
+       CLOSE SEQ4-FILE.
+       
+
+
+       STOP RUN.
+
+           
+     

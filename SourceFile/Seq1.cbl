@@ -23,6 +23,7 @@
                        display "ERROR: "OFStat
                        goback
                    end-if
+                   
                move "Yuan Allego" to buffer
                write buffer
                write buffer
