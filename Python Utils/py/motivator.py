@@ -21,7 +21,7 @@ with open('counter.txt', 'r') as file:
 
     size = len(content)
     
-if size >= 5:
+if size == 5:
     with open('counter.txt', 'w') as f:
         f.write('')
     

@@ -15,7 +15,7 @@
            local-storage section.
            01 counter pic 9 value 1.
        procedure division.
-           open extend outputFile
+           open output outputFile
                perform until counter > 5
                    display counter
                    write bufferLine from counter
