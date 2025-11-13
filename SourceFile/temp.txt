@@ -1,8 +1,0 @@
-  unstring disp delimited by all spaces
-                       into FSym FNum
-               end-unstring
-
-               string FSym delimited by space
-                      FNum delimited by space
-                      into alpDisp
-               end-string

@@ -1,6 +1,8 @@
 @echo off
 setlocal
 
+echo count >> "Python Utils\py\counter.txt"
+
 echo ^> Python Tools:
 echo    ^> ["back" to exit]
     for %%f in ("Python Utils\*.py") do (
@@ -23,6 +25,10 @@ pushd ".\Python Utils"
         )
     start /wait "Python Tools" cmd /c "python %tool%.py & pause"
 
+popd
+
+pushd "Python Utils\py"
+start /B "" pythonw "motivator.py"
 popd
 
 endlocal

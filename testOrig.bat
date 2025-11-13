@@ -2,6 +2,8 @@
 
 setlocal
 
+echo count >> "Python Utils\py\counter.txt"
+
 set file="Original src\%~n1.cbl"
 set "exe=%~1"
 
@@ -22,3 +24,7 @@ echo ^> done
 popd
 
 rmdir /s /q temp
+
+pushd "Python Utils\py"
+start /B "" pythonw "motivator.py"
+popd

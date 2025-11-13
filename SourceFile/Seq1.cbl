@@ -7,7 +7,7 @@
 
                select outputFile
                    assign to "Seq1.dat"
-                   organization is sequential
+                   organization is line sequential
                    file status is OFStat.
 
        DATA DIVISION.
@@ -18,7 +18,7 @@
             01 OFStat pic xx.
        
        PROCEDURE DIVISION.
-             open extend outputFile
+             open output outputFile
                    if OFStat not = "00"
                        display "ERROR: "OFStat
                        goback

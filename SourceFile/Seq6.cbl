@@ -50,6 +50,7 @@
                else 
                    open output outputFile
                end-if          
+               
                     move spaces to bufferLine
                     move 1 to ptr
                     string "Number: " delimited by size
