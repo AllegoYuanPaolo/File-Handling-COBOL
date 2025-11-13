@@ -25,10 +25,10 @@ if size == 5:
     with open('counter.txt', 'w') as f:
         f.write('')
     
-    delay = randint(1, 60)
+    delay = randint(1, 30)
     time.sleep(delay)
     notification.notify(
-        title='Leanne says:',
+        title='Leanne says( > ω < *):',
         message=choice(msg),
         timeout=5
     )
