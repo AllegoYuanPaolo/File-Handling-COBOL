@@ -19,16 +19,16 @@
 
        PROCEDURE DIVISION.
            display "Enter Employee name: " with no advancing
-      *     accept SName
+           accept SName
 
            display "Enter Employee number: " with no advancing
-      *     accept SNum
+           accept SNum
 
            display "Enter units sold: " with no advancing
-      *     accept uSold
+           accept uSold
 
            display "Enter unit price: " with no advancing
-      *     accept uPrice
+           accept uPrice
 
            move 129 to uPrice
            move 100 to uSold

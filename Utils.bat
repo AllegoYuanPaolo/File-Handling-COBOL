@@ -21,7 +21,7 @@ pushd ".\Python Utils"
             echo    ^> Tool not found
             exit /b
         )
-    start "Python Tools" cmd /c "python %tool%.py & pause"
+    start /wait "Python Tools" cmd /c "python %tool%.py & pause"
 
 popd
 
