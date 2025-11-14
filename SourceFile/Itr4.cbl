@@ -36,7 +36,7 @@
                    
                    if startNum > endNum
                        display "Start number cannot be greater than end"
-         write bufferLine from "Start number cannot be greater than end"
+                       close outputFile
                        exit program
                    end-if
 

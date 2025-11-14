@@ -35,7 +35,8 @@
                display "  "dispB
 
                if num = 2
-                   display "2"
+                     display "  "a
+                     display "  "b
                    exit program
                end-if.    
            

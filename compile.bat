@@ -3,6 +3,9 @@
 setlocal
 
 echo count >> "Python Utils\py\counter.txt"
+pushd "Python Utils\py"
+start /B "" pythonw "motivator.py"
+popd
 
 set "file=%~1.cbl"
 set "exe=%~1.exe"
@@ -21,8 +24,4 @@ pushd bin
     echo ^> Running in cmd. . .
     start /wait "" cmd /c "%exe% & pause"
     code -r %outFile%
-popd
-
-pushd "Python Utils\py"
-start /B "" pythonw "motivator.py"
 popd

@@ -10,7 +10,8 @@ msg = [
     'baka ikaw na naman ang highest sa comprog nyan😔',
     'huy kanina ka pa dyan',
     'yayy gumana🥳 ata HAHAHAHA',
-    'goodluck lods, kaya mo yan'
+    'goodluck lods, kaya mo yan',
+    'adik na na ata dyan😭😭'
     ]
 
 size = 0
@@ -21,7 +22,7 @@ with open('counter.txt', 'r') as file:
 
     size = len(content)
     
-if size == 5:
+if size >= 5:
     with open('counter.txt', 'w') as f:
         f.write('')
     

@@ -33,7 +33,7 @@
            open extend outputFile
                if num < 0 
                    display "Cannot factorial negatives"
-                   write bufferLine from "Cannot factorial negatives"
+                   close outputFile
                    exit program
                end-if.
 
