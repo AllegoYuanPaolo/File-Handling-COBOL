@@ -12,3 +12,5 @@ copy bin\Sel* "All COnstructs\Selection\bin\"
 
 copy SourceFile\Itr* "All Constructs\Iteration\src\"
 copy bin\Itr* "All Constructs\Iteration\bin\"
+
+
